@@ -5,6 +5,7 @@ export default {
       http: {
         method: 'get',
         path: '/todo/get',
+        authorizer: 'authorizer',
       },
     },
   ],
