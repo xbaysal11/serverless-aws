@@ -2,9 +2,6 @@
 import type { AWS } from '@serverless/typescript';
 
 import {
-  createTodo,
-  getTodo,
-  deleteTodo,
   login,
   authorizer,
   uploadImage,
@@ -58,9 +55,6 @@ const serverlessConfiguration: AWS = {
     lambdaHashingVersion: '20201221',
   },
   functions: {
-    createTodo,
-    getTodo,
-    deleteTodo,
     login,
     authorizer,
     uploadImage,
