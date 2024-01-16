@@ -5,7 +5,7 @@ export default {
       http: {
         method: 'delete',
         path: '/todo/delete',
-       
+        authorizer: "authorizer"
       },
     },
   ],

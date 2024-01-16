@@ -5,6 +5,7 @@ export default {
       http: {
         method: 'post',
         path: '/todo/create',
+        authorizer: "authorizer"
       },
     },
   ],

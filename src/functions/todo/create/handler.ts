@@ -4,6 +4,7 @@ import Todo from '@/db/models/todos';
 const createTodo = async (event) => {
   try {
     const body = JSON.parse(event.body);
+    console.log('event: ', event);
 
     const created = await Todo.create({
       todo: body.todo,

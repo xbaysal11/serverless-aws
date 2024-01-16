@@ -1,7 +1,13 @@
 /* eslint-disable no-template-curly-in-string */
 import type { AWS } from '@serverless/typescript';
 
-import { createTodo, getTodo, deleteTodo } from './src/functions';
+import {
+  createTodo,
+  getTodo,
+  deleteTodo,
+  login,
+  authorizer,
+} from './src/functions';
 
 const serverlessConfiguration: AWS = {
   service: 'image-hosting',
@@ -47,7 +53,13 @@ const serverlessConfiguration: AWS = {
     environment: {},
     lambdaHashingVersion: '20201221',
   },
-  functions: { createTodo, getTodo, deleteTodo },
+  functions: {
+    createTodo,
+    getTodo,
+    deleteTodo,
+    login,
+    authorizer,
+  },
 };
 
 module.exports = serverlessConfiguration;
