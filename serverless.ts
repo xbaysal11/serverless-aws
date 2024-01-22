@@ -43,14 +43,14 @@ const serverlessConfiguration: AWS = {
       shouldStartNameWithService: true,
       metrics: false, 
     },
-    logs: {
-      restApi: {
-        accessLogging: false,
-        executionLogging: false,
-        level: 'INFO',
-        fullExecutionData: false,
-      },
-    },
+    // logs: {
+    //   restApi: {
+    //     accessLogging: false,
+    //     executionLogging: false,
+    //     level: 'INFO',
+    //     fullExecutionData: false,
+    //   },
+    // },
     environment: {},
     lambdaHashingVersion: '20201221',
   },

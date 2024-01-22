@@ -5,7 +5,7 @@ export default {
       http: {
         method: 'delete',
         path: '/image/delete',
-        authorizer: "authorizer"
+        authorizer: 'authorizer',
       },
     },
   ],

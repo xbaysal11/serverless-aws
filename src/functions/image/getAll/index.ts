@@ -5,7 +5,7 @@ export default {
       http: {
         method: 'get',
         path: '/image/getAll',
-        authorizer: "authorizer"
+        authorizer: 'authorizer',
       },
     },
   ],

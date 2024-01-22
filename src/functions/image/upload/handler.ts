@@ -31,12 +31,22 @@ const uploadImage = async (event) => {
     console.log('Item created successfully:', created);
     return {
       statusCode: 201,
+      headers: {
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET',
+      },
       body: JSON.stringify({ created, clientUrl }),
     };
   } catch (error) {
     console.error('error:', error);
     return {
       statusCode: 500,
+      headers: {
+        'Access-Control-Allow-Headers': 'Content-Type',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'OPTIONS,POST,GET',
+      },
       body: JSON.stringify({ message: 'Internal Server Error' }),
     };
   }
