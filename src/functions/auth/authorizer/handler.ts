@@ -12,6 +12,8 @@ export async function handler(event: any): Promise<APIGatewayProxyResult> {
   const policy = user ? 'Allow' : 'Deny';
   console.log(`Is user active? ${user}`);
   
+  console.log('HELLO ');
+  console.log('event.methodArn: ', event.methodArn);
   return generatePolicy(user.id, policy, event.methodArn, user.username);
 }
 
@@ -38,7 +40,12 @@ const generatePolicy = (
     const statement = {
       Action: 'execute-api:Invoke',
       Effect: effect,
-      Resource: resource,
+      Resource: [
+        "arn:aws:execute-api:us-east-1:951772855919:vx8nmunyyb/dev/GET/image/getAll",
+        "arn:aws:execute-api:us-east-1:951772855919:vx8nmunyyb/dev/DELETE/image/delete",
+        "arn:aws:execute-api:us-east-1:951772855919:vx8nmunyyb/dev/POST/image/upload",
+        "arn:aws:execute-api:us-east-1:951772855919:vx8nmunyyb/dev/GET/image/download",
+      ],
     };
 
     policyDocument.Statement[0] = statement;

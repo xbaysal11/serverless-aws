@@ -2,11 +2,13 @@
 import type { AWS } from '@serverless/typescript';
 
 import {
-  createTodo,
-  getTodo,
-  deleteTodo,
   login,
   authorizer,
+  uploadImage,
+  fileUploaded,
+  downloadImage,
+  getAllImages,
+  deleteImage,
 } from './src/functions';
 
 const serverlessConfiguration: AWS = {
@@ -16,7 +18,7 @@ const serverlessConfiguration: AWS = {
   custom: {
     webpack: {
       webpackConfig: './webpack.config.js',
-      includeModules: true,
+      includeModules: { forceInclude: ['pg'] },
       packager: 'yarn',
     },
     stage: 'dev',
@@ -39,26 +41,27 @@ const serverlessConfiguration: AWS = {
     apiGateway: {
       minimumCompressionSize: 1024,
       shouldStartNameWithService: true,
-      metrics: false, // activate to see CacheHits and Misses
+      metrics: false, 
     },
-    logs: {
-      // activate to see API Gateway logs
-      restApi: {
-        accessLogging: false,
-        executionLogging: false,
-        level: 'INFO',
-        fullExecutionData: false,
-      },
-    },
+    // logs: {
+    //   restApi: {
+    //     accessLogging: false,
+    //     executionLogging: false,
+    //     level: 'INFO',
+    //     fullExecutionData: false,
+    //   },
+    // },
     environment: {},
     lambdaHashingVersion: '20201221',
   },
   functions: {
-    createTodo,
-    getTodo,
-    deleteTodo,
     login,
     authorizer,
+    uploadImage,
+    fileUploaded,
+    downloadImage,
+    getAllImages,
+    deleteImage,
   },
 };
 

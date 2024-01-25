@@ -1,10 +1,10 @@
 export default {
-  handler: `src/functions/todo/get/handler.main`,
+  handler: `src/functions/image/getAll/handler.main`,
   events: [
     {
       http: {
         method: 'get',
-        path: '/todo/get',
+        path: '/image/getAll',
         authorizer: 'authorizer',
       },
     },
